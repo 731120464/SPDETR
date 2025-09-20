@@ -37,13 +37,13 @@ pip install -r requirements.txt
 * pretrained [baseline-checkpoint0107.pth](https://pan.baidu.com/s/1oiUDZqCk5D8bQjmMqb5ydw?pwd=3pux) at 20%.
 
 
-#### 1. Train PointDETR by 20% bbox
+#### 1. Train SPDETR by 20% bbox
 
-* ```python3 -m torch.distributed.launch --nproc_per_node=8 --use_env main.py --coco_path ./datasets/COCO  --partial_training_data --output_dir ./ckpt-ps/point-detr-9x --epochs 108 --lr_drop 72 --data_augment --position_embedding sine --warm_up --multi_step_lr```
+* ```python3 -m torch.distributed.launch --nproc_per_node=8 --use_env main.py --coco_path ./datasets/bwd  --partial_training_data --output_dir ./ckpt-ps/point-detr-9x --epochs 108 --lr_drop 72 --data_augment --position_embedding sine --warm_up --multi_step_lr```
 
 #### 2. Generate 80% pseudo-bbox 
 
-* ```python3 main.py --coco_path ./datasets/COCO --generate_pseudo_bbox --generated_anno PointDETR --position_embedding sine --resume ./ckpt-ps/baseline-checkpoint0107.pth```
+* ```python3 main.py --coco_path ./datasets/bwd --generate_pseudo_bbox --generated_anno SPDETR --position_embedding sine --resume ./ckpt-ps/baseline-checkpoint0107.pth```
 
 -------  Student Model -------
 
@@ -58,3 +58,20 @@ pip install -r requirements.txt
 
 * ```cd ./cvpods/playground/detection/coco/fcos-20p-no_teacher```
 * ``` pods_train --num-gpus 8 --dir . ```
+
+## Citation
+
+If this work helps your research / work, please consider citing:
+ ```
+@article{xu2024spdetrr,
+  title={SP-DETR: Superior Point Weak Semi-supervised DETR for Crop and Weed Detection},
+  author={Xu, Yifei and Ren, Shuaiqiang and Li, Li and Wei, Pingping and Deng, Hao and Wang, Aichen and Rao, Yuan},
+  journal={IEEE Transactions on Multimedia},
+  year={2024},
+  doi={10.1007/s11263-024-02005-x}
+}
+ ```
+## Aknowledgement
+
+This project is built upon DETR, Point-DETR, and related works in weak/semi-supervised object detection.
+
