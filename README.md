@@ -1,5 +1,17 @@
 # SP-DETR:Superior-Point Weak Semi-supervised DETR for Crop and Weed Detection
 
+## Introduce
+
+* Introduces a Point Amplification Module (PAM) for many-to-one mapping between points and objects.
+
+* Proposes a Multi-branch Point Encoder (MPE) with Relative Position Embedding (RPE) and Semantic Alignment Encoder (SAE).
+
+* Designs a Denoised Decoder (DD) for stable Hungarian matching and faster convergence.
+
+* Incorporates a Colour-guided Point Annotation (CPA) strategy for precise crop/weed annotation.
+
+* Achieves state-of-the-art performance on the Bonn Weed Detection (BWD) dataset.
+
 ## Requirements
 
 ```
@@ -18,17 +30,6 @@ conda activate spdetr
 pip install -r requirements.txt
 ```
 
-## Introduce
-
-* Introduces a Point Amplification Module (PAM) for many-to-one mapping between points and objects.
-
-* Proposes a Multi-branch Point Encoder (MPE) with Relative Position Embedding (RPE) and Semantic Alignment Encoder (SAE).
-
-* Designs a Denoised Decoder (DD) for stable Hungarian matching and faster convergence.
-
-* Incorporates a Colour-guided Point Annotation (CPA) strategy for precise crop/weed annotation.
-
-* Achieves state-of-the-art performance on the Bonn Weed Detection (BWD) dataset.
 
 ## Data Preparation
 
